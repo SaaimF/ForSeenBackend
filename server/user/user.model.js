@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema(
     gender: { type: String, default: "" },
     age: { type: Number, default: 0 },
     dob: Date,
-    mobileNumber: { type: Number, default: 0 },
+       mobileNumber: {
+  type: String,
+  required: true,
+  unique: true,
+},
     email: String,
     image: { type: String, default: "" },
     coverImage: { type: String, default: "" },
