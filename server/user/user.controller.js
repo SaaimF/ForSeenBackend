@@ -278,7 +278,7 @@ exports.signup = async (req, res) => {
     }
     if (mobileNumber) {
     const existingMobile = await User.exists({
-      mobileNumber: { $regex: new RegExp(`^${mobileNumber}$`, "i") },
+      mobileNumber: Number(mobileNumber),
     });
 
       if (existingMobile) {
